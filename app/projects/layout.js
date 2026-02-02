@@ -1,35 +1,42 @@
 "use client";
 
 import { HeadingDivider, Loader } from "components";
-import { Suspense, useState } from "react";
+import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
-import useSWR from "swr";
 import Error from "../error";
-import { Filter } from "./components/Filter";
 import { Projects } from "./components/Projects";
-
-const url = `${process.env.NEXT_PUBLIC_SANITY_URL}${process.env.NEXT_PUBLIC_SANITY_ALL_PROJECTS}`;
+import { Filter } from "./components/Filter";
 
 export default function Page() {
-  const [category, setCategory] = useState(undefined);
+  // Hardcoded GitHub projects with all fields
+  const projects = [
+    {
+      title: "Agevent",
+      description:
+        "Event management app built with Next.js for creating and managing events easily.",
+      images: ["agevent.jpg"], // add image file in /public/images or wherever your project expects
+      liveUrl: "https://agevent.vercel.app/",
+      repoUrl: "https://github.com/TimbakTwo/agevent",
+      stack: ["Next.js", "React", "Tailwind CSS", "Sanity (removed for now)"],
+    },
+    {
+      title: "InPlate",
+      description: "Food and restaurant app for tracking meals and menu items.",
+      images: ["inplate.jpg"],
+      liveUrl: "https://inplate-delta.vercel.app/",
+      repoUrl: "https://github.com/TimbakTwo/InPlate",
+      stack: ["Next.js", "React", "Tailwind CSS", "Supabase"],
+    },
+  ];
 
-  const fetchUrl = category ? filterUrl : url;
-  const { data, error } = useSWR(fetchUrl, fetcher);
-  const filteredProjects = data?.result;
-
-  const onClick = (catName) => setCategory(catName);
-
-  if (error) {
-    return <div className="container-md">Error loading projects...</div>;
-  }
+  // Optional filter click (placeholder, not active yet)
+  const onClick = () => {};
 
   return (
     <div className="container-md">
       <section id="projects" className="section">
-        <HeadingDivider title="Relevant projects" />
-
-        <Filter onClick={onClick} />
-
+        <HeadingDivider title="Relevant Projects" />
+        <Filter onClick={onClick} /> {/* Optional UI placeholder */}
         <Suspense
           fallback={
             <div className="flex-center">
@@ -38,20 +45,12 @@ export default function Page() {
           }
         >
           <ErrorBoundary FallbackComponent={Error}>
-            {filteredProjects === undefined ? (
-              // Loading state
+            {projects.length === 0 ? (
               <div className="flex-center">
-                <Loader />
-              </div>
-            ) : filteredProjects.length === 0 ? (
-              // Empty state
-              <div className="flex-center">
-                <h3 className="text-2xl">
-                  No projects found in {category} category
-                </h3>
+                <h3 className="text-2xl">No projects to display</h3>
               </div>
             ) : (
-              <Projects projects={filteredProjects} />
+              <Projects projects={projects} />
             )}
           </ErrorBoundary>
         </Suspense>
