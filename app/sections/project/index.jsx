@@ -1,4 +1,3 @@
-import { HeadingDivider } from "components";
 import { domAnimation, LazyMotion, useInView } from "framer-motion";
 import Link from "next/link";
 import { useRef } from "react";
@@ -14,7 +13,6 @@ export function ProjectsSection() {
   return (
     <LazyMotion features={domAnimation}>
       <section id="projects" className="section">
-        <HeadingDivider title="Latest projects" />
         <div className="h-10 md:h-14" />
 
         <div className="flex flex-col items-center gap-8 md:gap-14">

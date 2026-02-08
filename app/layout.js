@@ -7,15 +7,15 @@ import Loading from "./loading";
 export const metadata = { ...AppMetadata };
 
 export default function RootLayout({ children }) {
-	return (
-		<html lang="en" suppressHydrationWarning>
-			<body>
-				<ThemeContextProvider>
-					<AppHeader />
-					<Suspense fallback={<Loading />}>{children}</Suspense>
-					<AppFooter />
-				</ThemeContextProvider>
-			</body>
-		</html>
-	);
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <ThemeContextProvider>
+          <AppHeader />
+          <Suspense fallback={<Loading />}>{children}</Suspense>
+          <AppFooter />
+        </ThemeContextProvider>
+      </body>
+    </html>
+  );
 }
