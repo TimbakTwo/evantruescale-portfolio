@@ -61,7 +61,7 @@ export function IntroductionSection() {
             </div>
 
             {/* Image Container - Centered vertically and horizontally */}
-            <div className="relative z-10 w-4/5 h-4/5 z-0">
+            <div className="relative z-10 w-4/5 h-4/5">
               <Image
                 src="/devMan.png"
                 alt="Humanoid"
