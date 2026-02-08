@@ -3,7 +3,7 @@
 import {
   AboutSection,
   ProjectsSection,
-  TechnologiesSection,
+  ContactSection,
   IntroductionSection,
 } from "app/sections";
 
@@ -13,7 +13,7 @@ export default function Page() {
       <IntroductionSection />
       <AboutSection />
       <ProjectsSection />
-      <TechnologiesSection />
+      <ContactSection />
     </main>
   );
 }

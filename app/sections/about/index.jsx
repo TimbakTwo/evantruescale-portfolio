@@ -1,34 +1,31 @@
+import Link from "next/link";
+
 export function AboutSection() {
   const toolkit = [
     "JavaScript",
     "Node.js",
     "TypeScript",
+    "Tailwind",
+    "MongoDB",
     "CSS",
     "SASS",
-    "GraphQL",
-    "SQL",
+    "PostgreSQL",
+    "SQLite",
     "React",
-    "React Native",
-    "Redux",
     "Next.js",
-    "Angular",
-    "Phaser",
-    "GSAP",
-    "Express",
-    "Vite",
-    "webpack",
-    "Astro",
-    "Jest",
-    "Cypress",
+    "Framer Motion",
     "CLI",
     "Git",
     "SEO",
     "a11y",
     "Vercel",
+    "Clerk",
+    "Convex",
+    "Zod",
   ];
 
   return (
-    <section className="section font-sans py-20 px-6">
+    <section id="about" className="section font-sans py-20 px-6">
       {/* Header Container - Direct child with margin: auto */}
       <div className="max-w-6xl mx-auto text-center mb-16">
         <h2 className="title">About me</h2>
@@ -66,7 +63,7 @@ export function AboutSection() {
             </p>
           </div>
           <button className="bg-[#3b60c1] hover:opacity-90 text-white font-bold py-3 px-8 rounded shadow-md transition-all">
-            Projects
+            <Link href="#projects">Projects</Link>
           </button>
         </div>
 

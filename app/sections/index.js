@@ -1,5 +1,4 @@
 export { IntroductionSection } from "./introduction";
 export { AboutSection } from "./about";
-export { TechnologiesSection } from "./technologies";
+export { ContactSection } from "./contact";
 export { ProjectsSection } from "./project";
-export { ProjectItem } from "./project/ProjectItem";

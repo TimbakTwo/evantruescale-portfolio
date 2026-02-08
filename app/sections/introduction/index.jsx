@@ -25,8 +25,12 @@ export function IntroductionSection() {
           </p>
 
           <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 pt-4">
-            <Button size="lg" className="px-8 rounded-sm">
-              Contact me
+            <Button
+              asChild
+              size="lg"
+              className="px-8 rounded-sm bg-[#3b60c1] text-white hover:bg-[#3b60c1]"
+            >
+              <Link href="#contact">Contact me</Link>
             </Button>
             <Link
               href="#projects"
