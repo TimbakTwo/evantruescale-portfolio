@@ -19,7 +19,7 @@ export function ProjectsSection() {
         "Google Gemini AI",
       ],
 
-      image: "https://via.placeholder.com/600x400", // Replace with your image path
+      image: "agevent.png", // Replace with your image path
       link: "https://agevent.vercel.app/",
     },
     {
@@ -38,7 +38,7 @@ export function ProjectsSection() {
         "SQLite / PostgreSQL",
       ],
 
-      image: "https://via.placeholder.com/600x400", // Replace with your image path
+      image: "inplateProject.png", // Replace with your image path
       link: "https://inplate-delta.vercel.app/",
     },
   ];
